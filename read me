@@ -1,0 +1,3 @@
+npx parcel src/main.html for run 
+
+for saving notes need add server and push there notesStorage 
