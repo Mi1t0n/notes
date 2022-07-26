@@ -1,0 +1,469 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap";
+body {
+  background: #f19637;
+}
+
+body ::selection {
+  color: #f2e8c9;
+  background: #bf7830;
+}
+
+body ::-webkit-scrollbar {
+  width: 5px;
+}
+
+body ::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 5px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  border: 7px solid #bf7830;
+  border-radius: 5px;
+}
+
+.wrapper {
+  width: 1920px;
+  height: 1000px;
+  margin: 0 auto;
+  font-family: Roboto Mono, monospace;
+}
+
+.header {
+  color: #bf7830;
+  background: #f2e8c980;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.header .logo {
+  height: 42px;
+  text-align: center;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 100px;
+  flex: 0 0 120px;
+  margin: .5rem 1rem;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 2.2rem;
+}
+
+.header .search {
+  background: #f19637;
+}
+
+.header .search form {
+  width: 500px;
+  background: #f2e8c980;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header .search form img {
+  width: 20px;
+  height: 20px;
+}
+
+.header .search form input {
+  width: 100%;
+  height: 42px;
+  color: #9e9c9c;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.header .search form button {
+  width: 80px;
+  height: 42px;
+  cursor: pointer;
+  color: #ffba73;
+  background: #bf7830;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header .clock {
+  width: 130px;
+  height: 42px;
+  color: #bf7830;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  margin: .5rem 1rem;
+  font-family: Roboto Mono, monospace;
+  font-size: 1rem;
+  position: relative;
+}
+
+.header .clock ul {
+  margin: 7.5px 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.header .clock ul li {
+  display: inline;
+}
+
+.header .clock ul li#separator {
+  -webkit-animation: myfade 1s infinite;
+  -moz-animation: myfade 1s infinite;
+}
+
+@-webkit-keyframes myfade {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes myfade {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.page {
+  height: 900px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.page #allnotes {
+  width: 300px;
+  margin-left: 18px;
+  position: relative;
+}
+
+.page #allnotes form {
+  width: 297px;
+  background: #bf7830;
+  position: relative;
+}
+
+.page #allnotes form input {
+  width: 272px;
+  height: 25px;
+  color: #9e9c9c;
+  background: #f2e8c9;
+  border: none;
+  border-bottom: 2px solid #bf7830;
+  outline: none;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.page #allnotes form button {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  color: #ffba73;
+  background: #bf7830;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.page #allnotes .listofnotes {
+  height: 870px;
+  overflow: auto;
+}
+
+.page #allnotes .listofnotes ul {
+  padding: .4rem;
+}
+
+.page #allnotes .listofnotes ul li {
+  word-wrap: break-word;
+  cursor: pointer;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 20px;
+  list-style: none;
+  transition: margin-top .2s ease-in;
+  position: relative;
+}
+
+.page #allnotes .listofnotes ul li .slidebar {
+  opacity: 0;
+  width: 150px;
+  height: 30px;
+  transition: opacity .6s;
+  position: absolute;
+  top: -35px;
+  left: -4px;
+}
+
+.page #allnotes .listofnotes ul li .slidebar p {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2px;
+  padding: 0;
+  font-size: 1.3rem;
+  transition: width .3s;
+  display: inline-flex;
+}
+
+.page #allnotes .listofnotes ul li .slidebar p:hover {
+  width: 50px;
+}
+
+.page #allnotes .listofnotes ul li.removing {
+  transition: transform .3s;
+  transform: scale(0);
+}
+
+.page #allnotes .listofnotes ul li:hover .slidebar {
+  opacity: 1;
+}
+
+.page #allnotes .listofnotes ul li:hover {
+  margin-top: 35px;
+}
+
+.page #allnotes .listofnotes ul li textarea {
+  width: 270px;
+  resize: none;
+  height: 90px;
+  background: #f2e8c9;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 20px;
+}
+
+.page #allnotes .listofnotes ul li p {
+  height: 90px;
+}
+
+.page #allnotes .listofnotes ul .selected {
+  box-shadow: 0 0 5px #000;
+}
+
+.page #allnotes .listofnotes ul span {
+  display: none;
+}
+
+.page #allnotes .listofnotes ul [data-fav="true"] span {
+  color: #daa520;
+  display: inline-block;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+}
+
+.page #insidenotes {
+  width: 1560px;
+  height: 870px;
+  margin-right: 18px;
+}
+
+.page #insidenotes .topmenu {
+  width: 1556px;
+  height: 27px;
+  background: #ffba73;
+  border-bottom: 1px solid #bf7830;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+}
+
+.page #insidenotes .topmenu .textchanginmenu {
+  width: 230px;
+  justify-content: space-between;
+  margin-left: 10px;
+  display: flex;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+.page #insidenotes .topmenu .textchanginmenu button {
+  color: #9e9c9c;
+  cursor: pointer;
+  width: 35px;
+  text-align: center;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  margin-left: 2px;
+  transition: width .3s;
+}
+
+.page #insidenotes .topmenu .textchanginmenu button:hover {
+  width: 45px;
+}
+
+.page #insidenotes .topmenu input {
+  display: none;
+}
+
+.page #insidenotes .topmenu .btn_close {
+  float: right;
+  width: 27px;
+  height: 27px;
+  color: #ffba73;
+  text-align: center;
+  cursor: pointer;
+  background: #bf7830;
+}
+
+.page #insidenotes .main {
+  width: 1538px;
+  height: 850px;
+  background: #f2e8c9;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+  flex-direction: column;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+}
+
+.page #insidenotes .main .photos {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  transition: hover 5s;
+  display: flex;
+}
+
+.page #insidenotes .main .photos div {
+  width: 159px;
+  height: 159px;
+  user-select: none;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 5px;
+  margin: 5px;
+  position: relative;
+}
+
+.page #insidenotes .main .photos div :hover {
+  opacity: .5;
+}
+
+.page #insidenotes .main .photos div :hover span {
+  opacity: 1;
+}
+
+.page #insidenotes .main .photos div p {
+  text-align: right;
+  width: 159px;
+  height: 159px;
+  opacity: 0;
+  background: #000;
+  border-radius: 5px;
+  transition: opacity .22s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.page #insidenotes .main .photos div p span {
+  color: #fff;
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.page #insidenotes .main .note {
+  border-radius: 5px;
+  outline: none;
+  flex-grow: 3;
+  font-size: 19px;
+}
+
+.page #allnotes, .page #insidenotes {
+  height: 900px;
+  background: #f2e8c9b3;
+  border: 2px solid #bf7830;
+  border-radius: 5px;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role="list"], ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizespeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, :before, :after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/*# sourceMappingURL=main.2103b895.css.map */
